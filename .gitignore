@@ -1,0 +1,6 @@
+*.avi
+__pycache__
+
+bus.jpg
+
+runs/detectqq
