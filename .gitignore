@@ -1,6 +1,7 @@
 *.avi
+*.mp4
 __pycache__
 
 bus.jpg
 
-runs/detectqq
+runs/detect
