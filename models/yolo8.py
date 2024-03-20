@@ -20,7 +20,7 @@ class Yolov8:
 
     def predictVideo(self, url):
         print('Start predict')
-        result = self.model.predict(url, save=True,show=True)
+        result = self.model.predict(url, save=True,show=True,)
         print(result)
         print('Ended predict')
 

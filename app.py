@@ -1,3 +1,4 @@
+from threading import Thread
 from flask import Flask
 from ultralytics import YOLO
 from PIL import Image
@@ -7,6 +8,8 @@ from models.yolo8 import Yolov8
 
 app = Flask(__name__)
 
+model = Yolov8()
+
 
 @app.route('/')
 def index():
@@ -14,6 +17,4 @@ def index():
 
 
 if __name__ == "__main__":
-    model = Yolov8()
-    model.predictWebCam()
     app.run(host='0.0.0.0', port=1820, debug=True)
