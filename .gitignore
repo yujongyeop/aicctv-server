@@ -5,3 +5,6 @@ __pycache__
 bus.jpg
 
 runs/detect
+
+# Model Files
+*.pt
