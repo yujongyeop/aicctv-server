@@ -1,5 +1,5 @@
 from threading import Thread
-from flask import Flask
+from flask import Flask, request
 from ultralytics import YOLO
 from PIL import Image
 import cv2
@@ -14,6 +14,13 @@ model = Yolov8()
 @app.route('/')
 def index():
     return 'Hello!'
+
+@app.route("/model/", methods=["GET", "POST"])
+def modelPrediction():
+    if request.method=="POST":
+        return "POST"
+    elif request.method=="GET":
+        return "GET"
 
 
 if __name__ == "__main__":

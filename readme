@@ -1,0 +1,5 @@
+현재까지 확인한 문제
+
+1.YOLO → ffmpeg
+    1. video_size 미지정 시 Broken pipe 오류 발생
+    2.

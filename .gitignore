@@ -1,9 +1,12 @@
-*.avi
-*.mp4
+# Cache Files
 __pycache__
 
-bus.jpg
+# TEST Videos & Images
+*.jpg
+*.avi
+*.mp4
 
+# Detection Result Files
 runs/detect
 
 # Model Files
