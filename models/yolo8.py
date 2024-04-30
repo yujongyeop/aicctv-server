@@ -14,9 +14,8 @@ class Yolov8:
         if self.modelPath == modelPath:
             print('Model: Yolov8x Selected!')
         else:
-            print('Model: %s Selected', modelPath)
-        self.model = YOLO(modelPath)
-
+            print(f'Model: {modelPath} Selected')
+        self.model = YOLO(modelPath)  
     def test(self):
         self.model('https://ultralytics.com/images/bus.jpg')
 
