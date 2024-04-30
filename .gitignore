@@ -11,3 +11,6 @@ runs/detect
 
 # Model Files
 *.pt
+
+/paper_test
+/.idea

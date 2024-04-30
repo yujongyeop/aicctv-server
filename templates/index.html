@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<header>
+</header>
+
+<body>
+    <div id="predictions"></div>
+    <script>
+        const http = new XMLHttpRequest();
+        http.multipart = true
+        var i = 0
+        const url = "http://soompyo.com:9999/model"
+        http.open('GET', url)
+        http.send()
+        http.onreadystatechange = function () {
+            if (http.readyState >= 3) {
+                var parts = http.responseText.split("--frame\r\n")
+                for (var j = 1; j <= parts.length; j++) {
+                    preprocessing = parts[j].split("\r\n\r\n")
+                    image = preprocessing[1].replace('Content-Type: image/jpeg\r\n\r\n', '')
+                    var classes = preprocessing[3]
+                    if (classes === undefined) {
+                        continue
+                    }
+                    document.getElementById("img").src = 'data: image / jpeg; base64,' + image;
+                    document.getElementById("classInfo").innerText = preprocessing[3];
+                }
+                // var contentType = http.getResponseHeader('Content-Type')
+
+                // frame = http.responseText.split('--frame').toString();
+                // data = frame.split('Content-Type: text/json')
+                // image = data[0].split('Content-Type: image/jpeg')[1].trim()
+                // json = data[1]
+            }
+        };
+    </script>
+    <img id="img" src="">
+    <p id="classInfo">111</p>
+</body>
+
+</html>
